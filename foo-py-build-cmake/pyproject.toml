@@ -1,0 +1,20 @@
+[project]
+name = "foo"
+version = "0.1.0"
+description = "Foo"
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["py-build-cmake"]
+build-backend = "py_build_cmake.build"
+
+[tool.py-build-cmake.module]
+directory = "src"
+
+[tool.py-build-cmake.sdist]
+include = [
+    "src-native/*",
+]
+
+[tool.py-build-cmake.cmake]
+source_path = "src-native"
